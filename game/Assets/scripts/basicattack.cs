@@ -10,6 +10,7 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
     public GameObject clicked;
     private GameObject hand;
     private GameObject hand2;
+    public AudioSource audio1;
     public void OnPointerClick(PointerEventData pointerEventData)
     {
 
@@ -40,9 +41,10 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                 }
 
                 heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
+
             }
         }
-       
+     //   audio1.Stop();       
 
 
         }

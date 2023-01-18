@@ -18,8 +18,7 @@ public class DragDrop : MonoBehaviour, IPointerClickHandler{
     {
         if (can == true)
         {
-            //Output to console the clicked GameObject's name and the following message. You can replace this with your own actions for when clicking the GameObject.
-            //Debug.Log(name + " Game Object Clicked!");
+            
             is_clicked = true;
             parent = GameObject.Find("/Characters/heroes");
             int children = parent.transform.childCount;

@@ -33,7 +33,7 @@ public class randomAttack : MonoBehaviour
                 clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano();
                 clicked.transform.GetComponent<sprite>().zatak();
                 clicked = null;
-                return;
+                GameObject.Find("/ButtonController").GetComponent<tura>().nextTurn();
             }
         }
     }
