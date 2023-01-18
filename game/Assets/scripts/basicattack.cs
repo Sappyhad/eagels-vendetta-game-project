@@ -18,6 +18,7 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
         // Debug.Log(clicked.name);
         heroes = GameObject.Find("ButtonController");
         heroes.GetComponent<basicattack>().clicked = gameObject;
+       
           
     }
     public void Atakuj()

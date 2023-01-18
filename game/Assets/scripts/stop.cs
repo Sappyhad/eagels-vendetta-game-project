@@ -43,6 +43,10 @@ public class stop : MonoBehaviour
         audio.Stop();
     //    audio_v.Play();
         Destroy(but);
+    void Awake()
+        {
+            audio_v.Play();
+        }
     }
 
 }
