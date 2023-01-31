@@ -8,6 +8,7 @@ public class stop : MonoBehaviour
     public GameObject button;
     public GameObject panel;
     private GameObject but;
+    public AudioSource audio;
     public void Open()
     {
         if (button != null)
@@ -36,6 +37,7 @@ public class stop : MonoBehaviour
             Destroy(hand.transform.GetChild(i).GetComponent<DragDrop>());
         }
         but = GameObject.Find("StopButton");
+        //audio.Stop();
         Destroy(but);
     }
 

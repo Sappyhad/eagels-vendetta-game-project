@@ -39,7 +39,7 @@ public class HealthBar : MonoBehaviour
     }
     public void zaatakowano()
     {
-            currentHealth -= 50;           
+            currentHealth -= 20;           
     }
     void Dead()
     {
