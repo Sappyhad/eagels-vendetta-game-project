@@ -10,6 +10,8 @@ public class tura : MonoBehaviour
     public int iterator = 0;
     private GameObject[] characters;
     private int len;
+    public Sprite fieldTurn;
+    public Sprite fieldNonTurn;
 
     public void Start()
     {
@@ -150,6 +152,33 @@ public class tura : MonoBehaviour
                 }
             }
         }
+        if (characters[0].GetComponent<DragDrop>().can == false)
+        {
+            for (int i = 0; i < characters.Length; i++)
+            {
+                if (characters[i].GetComponent<tura>().turn == 1)
+                {
+                    string nm = characters[i].transform.parent.name;
+                    GameObject pole = GameObject.Find("/Fields/" + nm);
+                    int ktore = characters[i].GetComponent<DragDrop>().now;
+                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().sprite = fieldTurn;
+                    Color color = pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color;
+                    color.a = 0.75f;
+                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
+                }
+                else
+                {
+                    string nm = characters[i].transform.parent.name;
+                    GameObject pole = GameObject.Find("/Fields/" + nm);
+                    int ktore = characters[i].GetComponent<DragDrop>().now;
+                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().sprite = fieldNonTurn;
+                    Color color = pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color;
+                    color.a = 0.1f;
+                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
+
+                }
+            }
+        }
     }
     public void nextTurn()
     {
@@ -175,8 +204,10 @@ public class tura : MonoBehaviour
             for (int i = 0; i < len+1; i++)
             {
                 characters[i].GetComponent<tura>().turn = 0;
+             
             }
             characters[iterator].GetComponent<tura>().turn = 1;
+           
         }
         
         

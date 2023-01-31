@@ -3577,7 +3577,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 64d5319a78165434ea09f9e96fc36bbf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.167
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4302,7 +4302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 95201906}
   panel: {fileID: 1778897352}
-  audio: {fileID: 0}
+  aud: {fileID: 0}
 --- !u!1 &882792928
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,6 +4405,7 @@ GameObject:
   - component: {fileID: 902292733}
   - component: {fileID: 902292734}
   - component: {fileID: 902292735}
+  - component: {fileID: 902292736}
   m_Layer: 0
   m_Name: brek
   m_TagString: Untagged
@@ -4555,6 +4556,8 @@ MonoBehaviour:
   hero: []
   enem: []
   iterator: 0
+  fieldTurn: {fileID: 0}
+  fieldNonTurn: {fileID: 0}
 --- !u!114 &902292733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4596,6 +4599,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+--- !u!95 &902292736
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902292725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3cc6bc01333573b49a2d47553590048b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &922073463
 GameObject:
   m_ObjectHideFlags: 0
@@ -5544,6 +5567,7 @@ GameObject:
   - component: {fileID: 1062495185}
   - component: {fileID: 1062495184}
   - component: {fileID: 1062495183}
+  - component: {fileID: 1062495191}
   m_Layer: 0
   m_Name: pajak_topik
   m_TagString: Untagged
@@ -5676,6 +5700,8 @@ MonoBehaviour:
   hero: []
   enem: []
   iterator: 0
+  fieldTurn: {fileID: 0}
+  fieldNonTurn: {fileID: 0}
 --- !u!114 &1062495187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5704,7 +5730,7 @@ MonoBehaviour:
   is_clicked: 0
   hand: {fileID: 0}
   hand2: {fileID: 0}
-  now: 0
+  now: 8
   can: 1
 --- !u!65 &1062495189
 BoxCollider:
@@ -5735,6 +5761,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!95 &1062495191
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062495180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ade860915a47724f86fe79a875f63b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1099065095
 GameObject:
   m_ObjectHideFlags: 0
@@ -6274,6 +6320,7 @@ GameObject:
   - component: {fileID: 1173555189}
   - component: {fileID: 1173555190}
   - component: {fileID: 1173555191}
+  - component: {fileID: 1173555192}
   m_Layer: 0
   m_Name: witaminer
   m_TagString: Untagged
@@ -6424,6 +6471,8 @@ MonoBehaviour:
   hero: []
   enem: []
   iterator: 0
+  fieldTurn: {fileID: 0}
+  fieldNonTurn: {fileID: 0}
 --- !u!114 &1173555189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6465,6 +6514,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+--- !u!95 &1173555192
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173555181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69100d84bc448ba4691d732edbd35917, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1203587334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6847,7 +6916,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a0f6403119e0ada45b40072924955a56, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.156
   m_Pitch: 1
   Loop: 1
   Mute: 1
@@ -8119,6 +8188,7 @@ GameObject:
   - component: {fileID: 1560842961}
   - component: {fileID: 1560842960}
   - component: {fileID: 1560842959}
+  - component: {fileID: 1560842969}
   m_Layer: 0
   m_Name: enem2
   m_TagString: Untagged
@@ -8215,6 +8285,8 @@ MonoBehaviour:
   hero: []
   enem: []
   iterator: 0
+  fieldTurn: {fileID: 0}
+  fieldNonTurn: {fileID: 0}
 --- !u!114 &1560842964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8243,7 +8315,7 @@ MonoBehaviour:
   is_clicked: 0
   hand: {fileID: 0}
   hand2: {fileID: 0}
-  now: 9
+  now: 6
   can: 1
 --- !u!65 &1560842966
 BoxCollider:
@@ -8326,6 +8398,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1560842969
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560842957}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 154b7306d4a66a745803aec070d8f94f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1592044887
 GameObject:
   m_ObjectHideFlags: 0
@@ -8999,7 +9091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 0}
   panel: {fileID: 0}
-  audio: {fileID: 0}
+  aud: {fileID: 0}
 --- !u!4 &1792358376
 Transform:
   m_ObjectHideFlags: 0
@@ -9047,8 +9139,10 @@ MonoBehaviour:
   - {fileID: 1062495180}
   enem:
   - {fileID: 2011868900}
-  - {fileID: 0}
+  - {fileID: 1560842957}
   iterator: 0
+  fieldTurn: {fileID: 21300000, guid: 6474c4ea48c06c9439dec33c4979f6d9, type: 3}
+  fieldNonTurn: {fileID: 21300000, guid: 950047cb17ad4ab438d8194639d892cb, type: 3}
 --- !u!1 &1819443374
 GameObject:
   m_ObjectHideFlags: 0
@@ -10211,6 +10305,7 @@ GameObject:
   - component: {fileID: 2011868909}
   - component: {fileID: 2011868910}
   - component: {fileID: 2011868911}
+  - component: {fileID: 2011868912}
   m_Layer: 0
   m_Name: enem
   m_TagString: Untagged
@@ -10249,7 +10344,7 @@ MonoBehaviour:
   is_clicked: 0
   hand: {fileID: 0}
   hand2: {fileID: 0}
-  now: 9
+  now: 7
   can: 1
 --- !u!65 &2011868903
 BoxCollider:
@@ -10361,6 +10456,8 @@ MonoBehaviour:
   hero: []
   enem: []
   iterator: 0
+  fieldTurn: {fileID: 0}
+  fieldNonTurn: {fileID: 0}
 --- !u!114 &2011868908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10418,6 +10515,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+--- !u!95 &2011868912
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011868900}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e95e21057d9265840a01ee47fca27280, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2100567196
 GameObject:
   m_ObjectHideFlags: 0

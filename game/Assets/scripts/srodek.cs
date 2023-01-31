@@ -22,6 +22,8 @@ public class srodek : MonoBehaviour
         panel = GameObject.Find("/Canvas/PanelTlo");
         panel.SetActive(false);  
         GameObject.Find("/CamManager").GetComponent<change>().toCenterCamera();
+        a.gameObject.GetComponent<Animator>().enabled = false;
+        b.gameObject.GetComponent<Animator>().enabled = false;
         a.transform.GetChild(0).gameObject.SetActive(false);
         b.transform.GetChild(0).gameObject.SetActive(false);
         a.transform.position = hand.transform.position;
@@ -33,5 +35,7 @@ public class srodek : MonoBehaviour
         GameObject.Find("/CamManager").GetComponent<change>().toMainCamera();
         a.transform.position = boh;
         b.transform.position = enemy;
+        a.gameObject.GetComponent<Animator>().enabled = true;
+        b.gameObject.GetComponent<Animator>().enabled = true;
     }
 }
