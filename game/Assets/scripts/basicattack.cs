@@ -10,15 +10,10 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
     public GameObject clicked;
     private GameObject hand;
     private GameObject hand2;
-    public AudioSource audio1;
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-
-        // Debug.Log(name + " Game Object Clicked!asdas");
-        // Debug.Log(clicked.name);
         heroes = GameObject.Find("ButtonController");
         heroes.GetComponent<basicattack>().clicked = gameObject;
-       
           
     }
     public void Atakuj()
@@ -33,19 +28,24 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                 {
                     if (clicked.name != heroes.transform.GetChild(i).name && clicked.transform.parent.gameObject != heroes.transform.GetChild(i).parent.gameObject)
                     {
+                        //heroes.transform.GetChild(i).gameObject.GetComponent<Animator>().enabled=false;
+                        //clicked.transform.gameObject.GetComponent<Animator>().Play(0);
                         heroes.transform.GetChild(i).GetComponent<srodek>().zatak(heroes.transform.GetChild(i).gameObject, clicked);
                         heroes.transform.GetChild(i).transform.GetComponent<sprite>().atak();
                         clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano();
+                        
+                        //clicked.transform.gameObject.GetComponent<Animator>().Play(1);
                         clicked.transform.GetComponent<sprite>().zatak();
                         clicked = null;
+                        //heroes.transform.GetChild(i).gameObject.GetComponent<Animator>().enabled = true;
                     }
                 }
-
+                
                 heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
 
             }
         }
-     //   audio1.Stop();       
+       
 
 
         }

@@ -35,6 +35,9 @@ public class randomAttack : MonoBehaviour
                 clicked = null;
                 GameObject.Find("/ButtonController").GetComponent<tura>().nextTurn();
             }
+
+          
+                
         }
     }
 }

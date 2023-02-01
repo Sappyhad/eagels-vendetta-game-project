@@ -20,10 +20,10 @@ public class srodek : MonoBehaviour
         hand = GameObject.Find("/Fields/Center/Hero");
         hand2 = GameObject.Find("/Fields/Center/Enemy");
         panel = GameObject.Find("/Canvas/PanelTlo");
-        panel.SetActive(false);
-        Vector3 cam = Camera.main.transform.position;
-        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x- 0.057f, Camera.main.transform.position.y - 3.999f, Camera.main.transform.position.z + 6);
-        Camera.main.transform.Rotate(-18.112f, 0.938f, 1.422f);  
+        panel.SetActive(false);  
+        GameObject.Find("/CamManager").GetComponent<change>().toCenterCamera();
+        a.gameObject.GetComponent<Animator>().enabled = false;
+        b.gameObject.GetComponent<Animator>().enabled = false;
         a.transform.GetChild(0).gameObject.SetActive(false);
         b.transform.GetChild(0).gameObject.SetActive(false);
         a.transform.position = hand.transform.position;
@@ -32,9 +32,10 @@ public class srodek : MonoBehaviour
         a.transform.GetChild(0).gameObject.SetActive(true);
         b.transform.GetChild(0).gameObject.SetActive(true);
         panel.SetActive(true);
-        Camera.main.transform.position=cam;
-        Camera.main.transform.Rotate(18.112f, -0.938f, -1.422f);
+        GameObject.Find("/CamManager").GetComponent<change>().toMainCamera();
         a.transform.position = boh;
         b.transform.position = enemy;
+        a.gameObject.GetComponent<Animator>().enabled = true;
+        b.gameObject.GetComponent<Animator>().enabled = true;
     }
 }

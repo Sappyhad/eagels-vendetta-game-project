@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     private Image healthBar;
     public TMP_Text healthText;
     private float currentHealth;
-    private bool isDead = false;
+    public bool isDead = false;
     public Sprite damaged;
     private Sprite normal;
     // Start is called before the first frame update
@@ -27,20 +27,27 @@ public class HealthBar : MonoBehaviour
         healthText.text = currentHealth.ToString() + " / "+MAX_HEALTH.ToString();
         if (currentHealth <= 0)
         {
-            if (isDead)
-            {
-                return;
-            }
+            //if (isDead)
+            //{
+                
+            //    return;
+            //}
+            
             Dead();
         }
        
     }
     public void zaatakowano()
     {
-            currentHealth -= 10;           
+            currentHealth -= 20;           
     }
     void Dead()
     {
+        if (transform.parent.parent.parent.GetComponent<tura>().turn == 1) {
+            GameObject.Find("/ButtonController").GetComponent<tura>().nextTurn();
+        }
+       
         isDead = true;
+        
     }
 }

@@ -8,19 +8,16 @@ public class stop : MonoBehaviour
     public GameObject button;
     public GameObject panel;
     private GameObject but;
-    public AudioSource audio;
-    public AudioSource audio_v;
+    public AudioSource aud;
     public void Open()
     {
         if (button != null)
         {
             button.SetActive(true);
-            
         }
         if (panel != null)
         {
             panel.SetActive(true);
-            
         }
     }
     public void st()
@@ -30,23 +27,18 @@ public class stop : MonoBehaviour
         int children = hand.transform.childCount;
         for (int i = 0; i < children; i++) { 
             hand.transform.GetChild(i).GetComponent<DragDrop>().can = false;
-            Destroy(hand.transform.GetChild(i).GetComponent<DragDrop>());
+           // Destroy(hand.transform.GetChild(i).GetComponent<DragDrop>());
         }
         hand = GameObject.Find("/Characters/heroes");
         children = hand.transform.childCount;
         for (int i = 0; i < children; i++)
         {
             hand.transform.GetChild(i).GetComponent<DragDrop>().can = false;
-            Destroy(hand.transform.GetChild(i).GetComponent<DragDrop>());
+           // Destroy(hand.transform.GetChild(i).GetComponent<DragDrop>());
         }
         but = GameObject.Find("StopButton");
-        audio.Stop();
-    //    audio_v.Play();
+        //aud.Stop();
         Destroy(but);
-    void Awake()
-        {
-            audio_v.Play();
-        }
     }
 
 }
