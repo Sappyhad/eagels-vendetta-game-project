@@ -28,9 +28,10 @@ public class randomAttack : MonoBehaviour
             {
                 int childrenhe = heroes.transform.childCount;
                 clicked = heroes.transform.GetChild(Random.Range(0, childrenhe)).gameObject;
-                enem.transform.GetChild(i).GetComponent<srodek>().zatak(clicked, enem.transform.GetChild(i).gameObject);
+                enem.transform.GetChild(i).GetComponent<srodek>().zatak(clicked, enem.transform.GetChild(i).gameObject, 1);
                 enem.transform.GetChild(i).transform.GetComponent<sprite>().atak();
-                clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano();
+                int dmg = enem.transform.GetChild(i).transform.GetComponent<DMG>().dmg;
+                clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano(dmg);
                 clicked.transform.GetComponent<sprite>().zatak();
                 clicked = null;
                 GameObject.Find("/ButtonController").GetComponent<tura>().nextTurn();

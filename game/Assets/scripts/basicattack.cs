@@ -30,9 +30,10 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                     {
                         //heroes.transform.GetChild(i).gameObject.GetComponent<Animator>().enabled=false;
                         //clicked.transform.gameObject.GetComponent<Animator>().Play(0);
-                        heroes.transform.GetChild(i).GetComponent<srodek>().zatak(heroes.transform.GetChild(i).gameObject, clicked);
+                        heroes.transform.GetChild(i).GetComponent<srodek>().zatak(heroes.transform.GetChild(i).gameObject, clicked, 0);
                         heroes.transform.GetChild(i).transform.GetComponent<sprite>().atak();
-                        clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano();
+                        int dmg = heroes.transform.GetChild(i).transform.GetComponent<DMG>().dmg;
+                        clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano(dmg);
                         
                         //clicked.transform.gameObject.GetComponent<Animator>().Play(1);
                         clicked.transform.GetComponent<sprite>().zatak();

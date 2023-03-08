@@ -37,9 +37,10 @@ public class HealthBar : MonoBehaviour
         }
        
     }
-    public void zaatakowano()
+    public void zaatakowano(int dmg)
     {
-            currentHealth -= 20;           
+        currentHealth -= dmg;
+        Debug.Log(dmg);
     }
     void Dead()
     {

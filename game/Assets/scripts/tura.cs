@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class tura : MonoBehaviour
 {
     public int turn;
@@ -56,11 +56,13 @@ public class tura : MonoBehaviour
         if (hero.Length == 1 && hero[0] == null)
         {
             Debug.Log("Przegrales");
+            SceneManager.LoadScene("End");
             return;
         }
         if (enem.Length == 1 && enem[0] == null)
         {
             Debug.Log("Wygrales");
+            SceneManager.LoadScene("End");
             return;
         }
         List<GameObject> myListHe = new List<GameObject>();
