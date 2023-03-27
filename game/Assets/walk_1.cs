@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class walk_1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed = 5f;
+  //  public isgrounded groundedCheck;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+    //    if (groundedCheck.IsGrounded())
+     //   {
+            transform.Translate(new Vector3(-horizontalInput, 0f, -verticalInput) * speed * Time.deltaTime);
+     //   }
     }
 }
