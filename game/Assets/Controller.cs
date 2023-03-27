@@ -11,17 +11,14 @@ public class Controller : MonoBehaviour
     public float MoveSpeed = 0.2f;
     public float JumpForce = 1000;
 
-   // public float MouseSensitivity = 10;
 
     float Vertical;
     float Horizontal;
 
- //   public float MouseX;
-//    public float MouseY;
 
     public bool IsGrounded;
 
-  //  float CamRotX;
+    float CamRotX;
 
     public float MaxRotX;
 
@@ -35,8 +32,6 @@ public class Controller : MonoBehaviour
     {
         Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
-    //    MouseX = Input.GetAxis("Mouse X");
-      //  MouseY = Input.GetAxis("Mouse Y");
 
         RB.MovePosition((transform.position + (transform.forward) * Vertical * MoveSpeed) + (transform.right * Horizontal * MoveSpeed));
 
@@ -45,15 +40,8 @@ public class Controller : MonoBehaviour
             RB.AddForce(transform.up * JumpForce);
         }
 
-      //  RB.MoveRotation(RB.rotation * Quaternion.Euler(new Vector3(0, MouseX * MouseSensitivity, 0)));
-
-     //   CamRotX -= MouseY * MouseSensitivity;
-      //  CamRotX = Mathf.Clamp(CamRotX, -MaxRotX, MaxRotX);
-      //  Quaternion CamRot = Quaternion.Euler(CamRotX, 0, 0);
-      //  Cam.transform.localRotation = CamRot;
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
 }
