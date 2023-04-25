@@ -12,6 +12,7 @@ public class tura : MonoBehaviour
     private int len;
     public Sprite fieldTurn;
     public Sprite fieldNonTurn;
+    private GameObject hand;
 
     public void Start()
     {
@@ -56,13 +57,28 @@ public class tura : MonoBehaviour
         if (hero.Length == 1 && hero[0] == null)
         {
             Debug.Log("Przegrales");
-            SceneManager.LoadScene("End");
+            //SceneManager.LoadScene("End");
             return;
         }
         if (enem.Length == 1 && enem[0] == null)
         {
             Debug.Log("Wygrales");
-            SceneManager.LoadScene("End");
+            for(int i=0; i < hero.Length; i++)
+            {
+                hand = team.instance.gameObject;
+                int children = hand.transform.childCount;
+                for (int j = 0; j < children; j++)
+                {
+                    if (hand.transform.GetChild(j).gameObject.name == hero[i].name)
+                    {
+                        hand.transform.GetChild(j).gameObject.transform.GetComponent<HPMap>().currentHealth = hero[i].transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().currentHealth;
+                        
+
+                    }
+                }
+            }
+
+            SceneManager.UnloadScene(1);
             return;
         }
         List<GameObject> myListHe = new List<GameObject>();

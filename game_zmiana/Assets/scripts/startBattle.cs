@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class startBattle : MonoBehaviour
 {
+    //public static startBattle st;
+    //private void Awake()
+    //{
+    //    st = this;
+    //    DontDestroyOnLoad(this.gameObject);
+    //}
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(1);
+        gameObject.SetActive(false);
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("SimpleScene"));
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 }

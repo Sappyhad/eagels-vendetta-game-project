@@ -9,14 +9,28 @@ public class HealthBar : MonoBehaviour
     public float health = MAX_HEALTH;
     private Image healthBar;
     public TMP_Text healthText;
-    private float currentHealth;
+    public float currentHealth;
     public bool isDead = false;
     public Sprite damaged;
     private Sprite normal;
+    private GameObject hand;
+    private GameObject hand2;
     // Start is called before the first frame update
     void Start()
     {
         healthBar = GetComponent<Image>();
+        hand = transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject;
+        hand2 = team.instance.gameObject;
+        int children = hand2.transform.childCount;
+        for(int i=0; i < children; i++)
+        {
+            if(hand2.transform.GetChild(i).gameObject.name == hand.name)
+            {
+                currentHealth = hand2.transform.GetChild(i).gameObject.transform.GetComponent<HPMap>().currentHealth;
+                return;
+
+            }
+        }
         currentHealth = MAX_HEALTH;
     }
 
