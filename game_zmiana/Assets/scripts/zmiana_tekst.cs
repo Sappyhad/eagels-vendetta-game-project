@@ -33,7 +33,7 @@ public class zmiana_tekst : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp("space") && renderer.material.color == highlightColor)
+        if (Input.GetKeyUp("e") && renderer.material.color == highlightColor)
         {
             renderer.material.mainTexture = newTexture;
         }
