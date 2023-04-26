@@ -78,7 +78,10 @@ public class tura : MonoBehaviour
                 }
             }
 
-            SceneManager.UnloadScene(1);
+            
+            SceneManager.UnloadScene(PlayerPrefs.GetInt("where"));            
+           
+           
             return;
         }
         List<GameObject> myListHe = new List<GameObject>();

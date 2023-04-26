@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startBattle : MonoBehaviour
+public class startBattle1 : MonoBehaviour
 {
     //public static startBattle st;
     //private void Awake()
@@ -14,8 +14,8 @@ public class startBattle : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         gameObject.SetActive(false);
+        PlayerPrefs.SetInt("where", 3);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName("SimpleScene"));
-        PlayerPrefs.SetInt("where", 1);
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
 }
