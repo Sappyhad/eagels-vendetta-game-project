@@ -44,7 +44,7 @@ public class DialTrigger : MonoBehaviour
     {
         hand = GameObject.Find("DialUI");
         hand.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        brek = GameObject.Find("Brek");
+        brek = GameObject.Find("Heroes");
         brek.transform.GetComponent<Controller>().enabled = false;
         FindObjectOfType<DialogMen>().StartDialogue(dialogue);
         

@@ -11,6 +11,7 @@ public class restart : MonoBehaviour
     {
         if (transform.position.y < bottomThreshold)
         {
+
             RestartGame();
         }
     }
