@@ -3205,8 +3205,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 802735eac8a378040b0db7dda2663a73, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3249,7 +3248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 60
-  charname: witaminer
+  charname: 
 --- !u!1 &492664127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,8 +4199,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 802735eac8a378040b0db7dda2663a73, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4244,7 +4242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 40
-  charname: pajak_topik
+  charname: 
 --- !u!1 &819381448
 GameObject:
   m_ObjectHideFlags: 0
@@ -9276,7 +9274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1610039879
 Transform:
   m_ObjectHideFlags: 0
@@ -9750,8 +9748,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 802735eac8a378040b0db7dda2663a73, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9822,7 +9819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 90
-  charname: brek
+  charname: 
 --- !u!1 &1671819462
 GameObject:
   m_ObjectHideFlags: 0
@@ -11503,6 +11500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ff8a332f6fc52409fdb77e389a2c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand2: {fileID: 1610039878}
 --- !u!1 &2102569427
 GameObject:
   m_ObjectHideFlags: 0

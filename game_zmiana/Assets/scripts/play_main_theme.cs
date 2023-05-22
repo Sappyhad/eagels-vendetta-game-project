@@ -10,6 +10,10 @@ public class play_main_theme : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void baz()
+    {
+        SceneManager.LoadScene("map");
+    }
     public void Quit()
     {
         Application.Quit();
