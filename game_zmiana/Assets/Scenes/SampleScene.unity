@@ -4895,7 +4895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &902292726
 Transform:
   m_ObjectHideFlags: 0
@@ -5035,7 +5035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d011d0434083974fb969dfdd83e63ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn: 1
+  turn: 0
   hero: []
   enem: []
   iterator: 0
@@ -6217,12 +6217,12 @@ GameObject:
   - component: {fileID: 1062495192}
   - component: {fileID: 1062495193}
   m_Layer: 0
-  m_Name: pajak_topik
+  m_Name: topik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1062495181
 Transform:
   m_ObjectHideFlags: 0
@@ -7089,7 +7089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1173555182
 Transform:
   m_ObjectHideFlags: 0
@@ -9927,6 +9927,7 @@ GameObject:
   - component: {fileID: 1792358375}
   - component: {fileID: 1792358378}
   - component: {fileID: 1792358377}
+  - component: {fileID: 1792358379}
   m_Layer: 0
   m_Name: ButtonController
   m_TagString: Untagged
@@ -10000,6 +10001,18 @@ MonoBehaviour:
   iterator: 0
   fieldTurn: {fileID: 21300000, guid: 6474c4ea48c06c9439dec33c4979f6d9, type: 3}
   fieldNonTurn: {fileID: 21300000, guid: 950047cb17ad4ab438d8194639d892cb, type: 3}
+--- !u!114 &1792358379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792358374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f415ef0aa1f1d47a37d2605e081ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1819443374
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,9 +13,10 @@ public class tura : MonoBehaviour
     public Sprite fieldTurn;
     public Sprite fieldNonTurn;
     private GameObject hand;
-
     public void Start()
     {
+        GetComponent<ktowalczy>().select();
+    
         len = hero.Length + enem.Length;
         if (hero.Length == enem.Length + 1)
         {
@@ -49,8 +50,7 @@ public class tura : MonoBehaviour
                     it = 0;
                 }
             }
-        }
-        
+        }        
     }
     public void Update()
     {

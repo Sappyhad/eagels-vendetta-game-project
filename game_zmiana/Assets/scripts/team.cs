@@ -12,10 +12,10 @@ public class team : MonoBehaviour
     private void Awake()
     {
 
-
         hand = kto.instance.gameObject;
         int children = hand.transform.childCount;
         int children2 = hand2.transform.childCount;
+
         for (int i = 0; i < children; i++)
         {
             Debug.Log("wybrany:"+ hand.transform.GetChild(i).name);
