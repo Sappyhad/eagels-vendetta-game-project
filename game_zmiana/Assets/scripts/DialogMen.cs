@@ -89,7 +89,7 @@ public class DialogMen : MonoBehaviour
         Debug.Log("Ebd");
         hand = GameObject.Find("DialUI");
         hand.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        brek = GameObject.Find("Brek");
+        brek = GameObject.Find("Heroes");
         brek.transform.GetComponent<Controller>().enabled = true;
         GameObject.Find("ramka_dziadka").GetComponent<DialTrigger>().rozm = false;
     }
