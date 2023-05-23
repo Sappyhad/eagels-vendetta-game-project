@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 public class HealthBar : MonoBehaviour
 {
-    private const float MAX_HEALTH = 100f;
-    public float health = MAX_HEALTH;
+    private const double MAX_HEALTH = 100d;
+    public double health = MAX_HEALTH;
     private Image healthBar;
-    public TMP_Text healthText;
-    public float currentHealth;
+    public TMP_Text healthText; 
+    public double currentHealth;
     public bool isDead = false;
     public Sprite damaged;
     private Sprite normal;
@@ -37,7 +37,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = currentHealth / MAX_HEALTH;
+        healthBar.fillAmount = (float)currentHealth / (float)MAX_HEALTH;
         healthText.text = currentHealth.ToString() + " / "+MAX_HEALTH.ToString();
         if (currentHealth <= 0)
         {
@@ -51,7 +51,7 @@ public class HealthBar : MonoBehaviour
         }
        
     }
-    public void zaatakowano(int dmg)
+    public void zaatakowano(double dmg)
     {
         currentHealth -= dmg;
         Debug.Log(dmg);

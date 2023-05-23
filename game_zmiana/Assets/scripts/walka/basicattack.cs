@@ -28,27 +28,79 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                 {
                     if (clicked.name != heroes.transform.GetChild(i).name && clicked.transform.parent.gameObject != heroes.transform.GetChild(i).parent.gameObject)
                     {
-                        //heroes.transform.GetChild(i).gameObject.GetComponent<Animator>().enabled=false;
-                        //clicked.transform.gameObject.GetComponent<Animator>().Play(0);
                         heroes.transform.GetChild(i).GetComponent<srodek>().zatak(heroes.transform.GetChild(i).gameObject, clicked, 0);
                         heroes.transform.GetChild(i).transform.GetComponent<sprite>().atak();
-                        int dmg = heroes.transform.GetChild(i).transform.GetComponent<DMG>().dmg;
+                        double dmg = heroes.transform.GetChild(i).transform.GetComponent<DMG>().dmg;
                         clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano(dmg);
                         
-                        //clicked.transform.gameObject.GetComponent<Animator>().Play(1);
                         clicked.transform.GetComponent<sprite>().zatak();
                         clicked = null;
-                        //heroes.transform.GetChild(i).gameObject.GetComponent<Animator>().enabled = true;
                     }
                 }
                 
                 heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
 
             }
-        }
-       
+        }  
 
+    }
+    public void Skill1()
+    {
+        heroes = GameObject.Find("/Characters/heroes");
+        int childrenhe = heroes.transform.childCount;
+        for (int i = 0; i < childrenhe; i++)
+        {
+            if (heroes.transform.GetChild(i).GetComponent<tura>().turn == 1)
+            {
+                if (clicked != null)
+                {
+                    if (clicked.name != heroes.transform.GetChild(i).name && clicked.transform.parent.gameObject != heroes.transform.GetChild(i).parent.gameObject)
+                    {
+                        heroes.transform.GetChild(i).GetComponent<srodek>().zatak(heroes.transform.GetChild(i).gameObject, clicked, 0, 1);
+                        heroes.transform.GetChild(i).transform.GetComponent<sprite>().atak();
+                        double dmg = heroes.transform.GetChild(i).transform.GetComponent<DMG>().dmg;
+                        double multi = heroes.transform.GetChild(i).transform.GetComponent<skille>().s1multiplier;
+                        clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano(dmg*multi);
 
+                        clicked.transform.GetComponent<sprite>().zatak();
+                        clicked = null;
+                    }
+                }
+
+                heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
+
+            }
         }
+
+    }
+    public void Skill2()
+    {
+        heroes = GameObject.Find("/Characters/heroes");
+        int childrenhe = heroes.transform.childCount;
+        for (int i = 0; i < childrenhe; i++)
+        {
+            if (heroes.transform.GetChild(i).GetComponent<tura>().turn == 1)
+            {
+                if (clicked != null)
+                {
+                    if (clicked.name != heroes.transform.GetChild(i).name && clicked.transform.parent.gameObject != heroes.transform.GetChild(i).parent.gameObject)
+                    {
+                        heroes.transform.GetChild(i).GetComponent<srodek>().zatak(heroes.transform.GetChild(i).gameObject, clicked, 0, 2);
+                        heroes.transform.GetChild(i).transform.GetComponent<sprite>().atak();
+                        double dmg = heroes.transform.GetChild(i).transform.GetComponent<DMG>().dmg;
+                        double multi = heroes.transform.GetChild(i).transform.GetComponent<skille>().s2multiplier;
+                        clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano(dmg*multi);
+
+                        clicked.transform.GetComponent<sprite>().zatak();
+                        clicked = null;
+                    }
+                }
+
+                heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
+
+            }
+        }
+
+    }
 }
 

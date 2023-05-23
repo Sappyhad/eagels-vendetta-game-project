@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HPMap : MonoBehaviour
 {
-    private const float MAX_HEALTH = 100f;
-    public float currentHealth;
+    private const double MAX_HEALTH = 100d;
+    public double currentHealth;
     public string charname;
     // Start is called before the first frame update
     void Start()
