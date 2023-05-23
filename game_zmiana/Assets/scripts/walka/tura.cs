@@ -16,7 +16,7 @@ public class tura : MonoBehaviour
     public void Start()
     {
         GetComponent<ktowalczy>().select();
-    
+        hero[0].GetComponent<tura>().turn = 1;
         len = hero.Length + enem.Length;
         if (hero.Length == enem.Length + 1)
         {

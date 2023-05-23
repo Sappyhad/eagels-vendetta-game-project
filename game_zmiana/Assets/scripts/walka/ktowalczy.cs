@@ -11,7 +11,7 @@ public class ktowalczy : MonoBehaviour
 
     public void select()
     {
-        bool first = false;
+        //bool first = false;
         hand = team.instance.gameObject;
         hand2 = GameObject.Find("/Characters/heroes/");
         int children = hand.transform.childCount;
@@ -25,14 +25,13 @@ public class ktowalczy : MonoBehaviour
                 {
                     hand2.transform.GetChild(j).gameObject.SetActive(true);
                 }
-                if (first == false)
-                {
-                    first = true;
-                    hand2.transform.GetChild(j).gameObject.GetComponent<tura>().turn = 1;
-                }
+                //if (first == false)
+                //{
+                //    first = true;
+                //    hand2.transform.GetChild(j).gameObject.GetComponent<tura>().turn = 1;
+                //}
             }
 
-            //Debug.Log(hand.transform.GetChild(i).gameObject.name);
 
         }
         for (int j = 0; j < children2; j++)
