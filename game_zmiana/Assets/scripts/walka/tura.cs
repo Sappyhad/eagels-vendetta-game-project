@@ -13,9 +13,10 @@ public class tura : MonoBehaviour
     public Sprite fieldTurn;
     public Sprite fieldNonTurn;
     private GameObject hand;
-
     public void Start()
     {
+        GetComponent<ktowalczy>().select();
+        hero[0].GetComponent<tura>().turn = 1;
         len = hero.Length + enem.Length;
         if (hero.Length == enem.Length + 1)
         {
@@ -49,8 +50,7 @@ public class tura : MonoBehaviour
                     it = 0;
                 }
             }
-        }
-        
+        }        
     }
     public void Update()
     {
@@ -78,7 +78,10 @@ public class tura : MonoBehaviour
                 }
             }
 
-            SceneManager.UnloadScene(1);
+            
+            SceneManager.UnloadScene(PlayerPrefs.GetInt("where"));            
+           
+           
             return;
         }
         List<GameObject> myListHe = new List<GameObject>();

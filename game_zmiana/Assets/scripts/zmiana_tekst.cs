@@ -8,6 +8,7 @@ public class zmiana_tekst : MonoBehaviour
     public Color highlightColor = Color.yellow;
     private Color originalColor;
     private Renderer renderer;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class zmiana_tekst : MonoBehaviour
     {
         if (Input.GetKeyUp("e") && renderer.material.color == highlightColor)
         {
+            audioSource.Play();
             renderer.material.mainTexture = newTexture;
         }
     }
