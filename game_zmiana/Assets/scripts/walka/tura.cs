@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class tura : MonoBehaviour
@@ -13,44 +15,73 @@ public class tura : MonoBehaviour
     public Sprite fieldTurn;
     public Sprite fieldNonTurn;
     private GameObject hand;
+    
     public void Start()
     {
         GetComponent<ktowalczy>().select();
-        hero[0].GetComponent<tura>().turn = 1;
+        
+       
+        //if (hero.Length == enem.Length + 1)
+        //{
+        //    characters = new GameObject[len];
+        //    for (int i = 0; i < hero.Length; i++)
+        //    {
+        //        characters[2 * i] = hero[i];
+        //    }
+        //    for (int i = 0; i < enem.Length; i++)
+        //    {
+        //        characters[2 * i + 1] = enem[i];
+        //    }
+        //}
+        //else
+        //{
+        //    characters = new GameObject[len+1];
+        //    for (int i = 0; i < hero.Length; i++)
+        //    {
+        //        characters[2 * i] = hero[i];
+        //    }
+        //    int it = 0;
+        //    for(int i = 0; i < len; i++)
+        //    {
+        //        if (characters[i] == null)
+        //        {
+        //            characters[i] = enem[it];
+        //            it++;
+        //        }
+        //        if (it >= enem.Length)
+        //        {
+        //            it = 0;
+        //        }
+        //    }
+        //}        
+    }
+    public void stworz()
+    {
         len = hero.Length + enem.Length;
-        if (hero.Length == enem.Length + 1)
+
+        characters = new GameObject[len];
+        hero.CopyTo(characters, 0);
+        enem.CopyTo(characters, hero.Length);
+        System.Random random = new System.Random();
+        characters = characters.OrderBy(x => random.Next()).ToArray();
+        characters[0].GetComponent<tura>().turn = 1;
+        foreach (var el in characters)
         {
-            characters = new GameObject[len];
-            for (int i = 0; i < hero.Length; i++)
+            Debug.Log("SIEMAAA" + el);
+        }
+        int a = 0;
+        foreach (var el in enem)
+        {
+            if (characters[0].name == el.name)
             {
-                characters[2 * i] = hero[i];
-            }
-            for (int i = 0; i < enem.Length; i++)
-            {
-                characters[2 * i + 1] = enem[i];
+                a = 1;
+                break;
             }
         }
-        else
+        if (a == 1)
         {
-            characters = new GameObject[len+1];
-            for (int i = 0; i < hero.Length; i++)
-            {
-                characters[2 * i] = hero[i];
-            }
-            int it = 0;
-            for(int i = 0; i < len; i++)
-            {
-                if (characters[i] == null)
-                {
-                    characters[i] = enem[it];
-                    it++;
-                }
-                if (it >= enem.Length)
-                {
-                    it = 0;
-                }
-            }
-        }        
+            characters[0].GetComponent<randomAttack>().zatak();
+        }
     }
     public void Update()
     {
@@ -140,97 +171,76 @@ public class tura : MonoBehaviour
         }
 
         len = hero.Length + enem.Length;
-        if (hero.Length == enem.Length + 1)
-        {
-            characters = new GameObject[len];
-            for (int i = 0; i < hero.Length; i++)
+
+       
+            if (characters[0].GetComponent<DragDrop>().can == false)
             {
-                characters[2 * i] = hero[i];
-            }
-            for (int i = 0; i < enem.Length; i++)
-            {
-                characters[2 * i + 1] = enem[i];
-            }
-        }
-        else
-        {
-            characters = new GameObject[len + 1];
-            for (int i = 0; i < hero.Length; i++)
-            {
-                characters[2 * i] = hero[i];
-            }
-            int it = 0;
-            for (int i = 0; i < len; i++)
-            {
-                if (characters[i] == null)
+                for (int i = 0; i < characters.Length; i++)
                 {
-                    characters[i] = enem[it];
-                    it++;
-                }
-                if (it >= enem.Length)
-                {
-                    it = 0;
+                    if (characters[i].GetComponent<tura>().turn == 1)
+                    {
+                        string nm = characters[i].transform.parent.name;
+                        GameObject pole = GameObject.Find("/Fields/" + nm);
+                        int ktore = characters[i].GetComponent<DragDrop>().now;
+                        pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().sprite = fieldTurn;
+                        Color color = pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color;
+                        color.a = 0.75f;
+                        pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
+                    }
+                    else
+                    {
+                        string nm = characters[i].transform.parent.name;
+                        GameObject pole = GameObject.Find("/Fields/" + nm);
+                        int ktore = characters[i].GetComponent<DragDrop>().now;
+                        pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().sprite = fieldNonTurn;
+                        Color color = pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color;
+                        color.a = 0.1f;
+                        pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
+
+                    }
                 }
             }
+        
+    }
+  
+    public void nextTurn()
+    {
+        Debug.Log("Przed: "+characters[iterator].name);
+        iterator++;
+       
+        if (iterator >= characters.Length)
+        {
+            iterator = 0;
         }
-        if (characters[0].GetComponent<DragDrop>().can == false)
+        Debug.Log("ITTTEE" + iterator);
+        if (characters[iterator].gameObject != null)
         {
             for (int i = 0; i < characters.Length; i++)
             {
-                if (characters[i].GetComponent<tura>().turn == 1)
-                {
-                    string nm = characters[i].transform.parent.name;
-                    GameObject pole = GameObject.Find("/Fields/" + nm);
-                    int ktore = characters[i].GetComponent<DragDrop>().now;
-                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().sprite = fieldTurn;
-                    Color color = pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color;
-                    color.a = 0.75f;
-                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
-                }
-                else
-                {
-                    string nm = characters[i].transform.parent.name;
-                    GameObject pole = GameObject.Find("/Fields/" + nm);
-                    int ktore = characters[i].GetComponent<DragDrop>().now;
-                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().sprite = fieldNonTurn;
-                    Color color = pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color;
-                    color.a = 0.1f;
-                    pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
-
-                }
-            }
-        }
-    }
-    public void nextTurn()
-    {
-        iterator++;
-        if (hero.Length == enem.Length + 1)
-        {
-            if (iterator >= len)
-            {
-                iterator = 0;
-            }
-            for (int i = 0; i < len; i++)
-            {
                 characters[i].GetComponent<tura>().turn = 0;
             }
             characters[iterator].GetComponent<tura>().turn = 1;
+            Debug.Log("Po: " + characters[iterator].name);
+            int a = 0;
+            foreach (var el in enem)
+            {
+                if (characters[iterator].name == el.name)
+                {
+                    a = 1;
+                    break;
+                }
+            }
+            if (a == 1)
+            {
+                characters[iterator].GetComponent<randomAttack>().zatak();
+            }
         }
         else
         {
-            if (iterator >= len+1)
-            {
-                iterator = 0;
-            }
-            for (int i = 0; i < len+1; i++)
-            {
-                characters[i].GetComponent<tura>().turn = 0;
-             
-            }
-            characters[iterator].GetComponent<tura>().turn = 1;
-           
+            nextTurn();
         }
         
-        
+
+
     }
 }

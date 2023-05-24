@@ -10,7 +10,7 @@ public class kto : MonoBehaviour
     {
        // Debug.Log(hand.name);
         int children = hand.transform.childCount -1;
-        for(int i = 0; i < children; i++)
+        for(int i = 1; i < children; i++)
         {
             GameObject hand2 = hand.transform.GetChild(i).GetChild(0).GetChild(0).gameObject;
             if(hand2.transform.GetComponent<wybierz>().sel==true)

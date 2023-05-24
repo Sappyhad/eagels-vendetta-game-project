@@ -54,7 +54,10 @@ public class srodek : MonoBehaviour
         b.transform.position = enemy;
         a.gameObject.GetComponent<Animator>().enabled = true;
         b.gameObject.GetComponent<Animator>().enabled = true;
-        if (who == 0) { b.transform.GetChild(0).GetChild(1).gameObject.SetActive(false); }
+        if (who == 0) 
+        { 
+            b.transform.GetChild(0).GetChild(1).gameObject.SetActive(false); 
+        }
         else
         {
             a.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);

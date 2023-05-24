@@ -1596,7 +1596,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!1 &277123397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4647,6 +4647,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1792358378}
+        m_TargetAssemblyTypeName: tura, Assembly-CSharp
+        m_MethodName: stworz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 863052577}
         m_TargetAssemblyTypeName: stop, Assembly-CSharp
         m_MethodName: Open
@@ -5055,7 +5067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a53421afabbd184e9dd50fef7529f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 50
+  dmg: 20
 --- !u!114 &902292738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5071,7 +5083,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 05dc8fd3a9e8db04bb6233d38af22367, type: 3}
   Aa: {fileID: 21300000, guid: ebfa4a3c0c43bfa4886f53791c95b405, type: 3}
   Skill1: {fileID: 21300000, guid: 5c884a9bbe8ce0d45aa2291649b35721, type: 3}
-  Skill2: {fileID: 0}
+  Skill2: {fileID: 21300000, guid: ebfa4a3c0c43bfa4886f53791c95b405, type: 3}
 --- !u!114 &902292739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6076,7 +6088,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!1 &1033265941
 GameObject:
   m_ObjectHideFlags: 0
@@ -6543,7 +6555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a53421afabbd184e9dd50fef7529f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 50
+  dmg: 15
 --- !u!114 &1062495193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7426,7 +7438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a53421afabbd184e9dd50fef7529f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 50
+  dmg: 16
 --- !u!114 &1173555194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7441,8 +7453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 49e330260029f874abb0d1caba0029ce, type: 3}
   Aa: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
-  Skill1: {fileID: 0}
-  Skill2: {fileID: 0}
+  Skill1: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
+  Skill2: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
 --- !u!114 &1173555195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8998,6 +9010,7 @@ GameObject:
   - component: {fileID: 1560842959}
   - component: {fileID: 1560842969}
   - component: {fileID: 1560842970}
+  - component: {fileID: 1560842971}
   m_Layer: 0
   m_Name: enem2
   m_TagString: Untagged
@@ -9240,6 +9253,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 2
+--- !u!114 &1560842971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560842957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939220559150f8c4eb65964a17523fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
+  Aa: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
+  Skill1: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
+  Skill2: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
 --- !u!1 &1574427015
 GameObject:
   m_ObjectHideFlags: 0
@@ -11400,6 +11429,7 @@ GameObject:
   - component: {fileID: 2011868911}
   - component: {fileID: 2011868912}
   - component: {fileID: 2011868913}
+  - component: {fileID: 2011868914}
   m_Layer: 0
   m_Name: enem
   m_TagString: Untagged
@@ -11642,6 +11672,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 2
+--- !u!114 &2011868914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011868900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939220559150f8c4eb65964a17523fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
+  Aa: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
+  Skill1: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
+  Skill2: {fileID: 21300000, guid: bbe5151300641d3419a91ef512be1c29, type: 3}
 --- !u!1 &2092279158
 GameObject:
   m_ObjectHideFlags: 0
@@ -11748,7 +11794,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &2092279161
 MonoBehaviour:
   m_ObjectHideFlags: 0

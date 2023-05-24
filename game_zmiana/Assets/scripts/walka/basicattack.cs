@@ -38,11 +38,11 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                     }
                 }
                 
-                heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
+                //heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
 
             }
-        }  
-
+        }
+        GameObject.Find("/ButtonController").GetComponent<tura>().nextTurn();
     }
     public void Skill1()
     {
@@ -67,11 +67,11 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                     }
                 }
 
-                heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
+                //heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
 
             }
         }
-
+        GameObject.Find("/ButtonController").GetComponent<tura>().nextTurn();
     }
     public void Skill2()
     {
@@ -96,11 +96,11 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                     }
                 }
 
-                heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
+               // heroes.transform.GetChild(i).GetComponent<randomAttack>().zatak();
 
             }
         }
-
+        GameObject.Find("/ButtonController").GetComponent<tura>().nextTurn();
     }
 }
 
