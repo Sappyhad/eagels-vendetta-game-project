@@ -33,13 +33,13 @@ public class srodek : MonoBehaviour
             b.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
             if(skill == 0)
                 b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text =(a.gameObject.GetComponent<DMG>().dmg).ToString();
-            if (skill == 1)
-                b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text = (a.gameObject.GetComponent<DMG>().dmg 
-                    * a.gameObject.GetComponent<skille>().s1multiplier).ToString();
+            //if (skill == 1)
+            //    b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text = (a.gameObject.GetComponent<DMG>().dmg 
+            //        * a.gameObject.GetComponent<skille>().s1multiplier).ToString();
 
-            if (skill==2)
-                b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text = (a.gameObject.GetComponent<DMG>().dmg 
-                    * a.gameObject.GetComponent<skille>().s2multiplier).ToString();
+            //if (skill==2)
+            //    b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text = (a.gameObject.GetComponent<DMG>().dmg 
+            //        * a.gameObject.GetComponent<skille>().s2multiplier).ToString();
         } else
         {
             a.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
