@@ -4894,6 +4894,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!114 &902292732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4953,6 +4955,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips:
+  - {fileID: 8300000, guid: 532e4f04d3e66744ea49749190085354, type: 3}
+  - {fileID: 8300000, guid: 290857ad8a5c84441b37b0e94caad847, type: 3}
+  - {fileID: 8300000, guid: f06b53ff040be634994ae94b2a891848, type: 3}
+  audioSource: {fileID: 0}
 --- !u!95 &902292736
 Animator:
   serializedVersion: 4
@@ -6252,6 +6259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!114 &1062495184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6311,6 +6320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!114 &1062495188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7166,6 +7177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!114 &1173555188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7225,6 +7238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!95 &1173555192
 Animator:
   serializedVersion: 4
@@ -8851,6 +8866,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!114 &1560842960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8926,6 +8943,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!114 &1560842965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9902,7 +9921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 0}
   panel: {fileID: 0}
-  aud: {fileID: 0}
+  aud: {fileID: 684278472}
 --- !u!4 &1792358376
 Transform:
   m_ObjectHideFlags: 0
@@ -9931,6 +9950,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips:
+  - {fileID: 8300000, guid: f06b53ff040be634994ae94b2a891848, type: 3}
+  - {fileID: 8300000, guid: 290857ad8a5c84441b37b0e94caad847, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &1792358378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11351,6 +11374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!114 &2011868907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11426,6 +11451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: {fileID: 0}
+  soundClips: []
+  audioSource: {fileID: 0}
 --- !u!95 &2011868912
 Animator:
   serializedVersion: 4

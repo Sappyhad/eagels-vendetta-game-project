@@ -8,6 +8,9 @@ public class randomAttack : MonoBehaviour
     private GameObject enem;
     public GameObject clicked;
 
+    public AudioClip[] soundClips;
+    public AudioSource audioSource;
+
     public void zatak()
     {
         StartCoroutine(atakbota());
@@ -22,6 +25,8 @@ public class randomAttack : MonoBehaviour
         enem = GameObject.Find("/Characters/enemies");
         heroes = GameObject.Find("/Characters/heroes");
         int children = enem.transform.childCount;
+        int randomIndex = Random.Range(0, soundClips.Length);
+        AudioClip randomClip = soundClips[randomIndex];
         for (int i = 0; i < children; i++)
         {
             if (enem.transform.GetChild(i).GetComponent<tura>().turn == 1)
@@ -31,6 +36,8 @@ public class randomAttack : MonoBehaviour
                 enem.transform.GetChild(i).GetComponent<srodek>().zatak(clicked, enem.transform.GetChild(i).gameObject, 1);
                 enem.transform.GetChild(i).transform.GetComponent<sprite>().atak();
                 int dmg = enem.transform.GetChild(i).transform.GetComponent<DMG>().dmg;
+                
+                audioSource.PlayOneShot(randomClip);
                 clicked.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().zaatakowano(dmg);
                 clicked.transform.GetComponent<sprite>().zatak();
                 clicked = null;

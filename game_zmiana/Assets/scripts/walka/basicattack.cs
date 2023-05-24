@@ -10,6 +10,10 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
     public GameObject clicked;
     private GameObject hand;
     private GameObject hand2;
+
+    public AudioClip[] soundClips;
+    public AudioSource audioSource;
+
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         heroes = GameObject.Find("ButtonController");
@@ -28,6 +32,7 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                 {
                     if (clicked.name != heroes.transform.GetChild(i).name && clicked.transform.parent.gameObject != heroes.transform.GetChild(i).parent.gameObject)
                     {
+                       
                         //heroes.transform.GetChild(i).gameObject.GetComponent<Animator>().enabled=false;
                         //clicked.transform.gameObject.GetComponent<Animator>().Play(0);
                         heroes.transform.GetChild(i).GetComponent<srodek>().zatak(heroes.transform.GetChild(i).gameObject, clicked, 0);
@@ -37,6 +42,11 @@ public class basicattack : MonoBehaviour, IPointerClickHandler
                         
                         //clicked.transform.gameObject.GetComponent<Animator>().Play(1);
                         clicked.transform.GetComponent<sprite>().zatak();
+                       // int randomIndex = Random.Range(0, soundClips.Length);
+                       // AudioClip randomClip = soundClips[randomIndex];
+
+                        // Odtwarzaj losowy dŸwiêk
+                      //  audioSource.PlayOneShot(randomClip);
                         clicked = null;
                         //heroes.transform.GetChild(i).gameObject.GetComponent<Animator>().enabled = true;
                     }

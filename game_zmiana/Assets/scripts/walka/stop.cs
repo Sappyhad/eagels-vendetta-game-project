@@ -37,7 +37,7 @@ public class stop : MonoBehaviour
            // Destroy(hand.transform.GetChild(i).GetComponent<DragDrop>());
         }
         but = GameObject.Find("StopButton");
-        //aud.Stop();
+        aud.Stop();
         Destroy(but);
     }
 
