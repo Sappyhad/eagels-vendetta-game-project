@@ -36,6 +36,7 @@ public class zmiana_tekst : MonoBehaviour
         if (Input.GetKeyUp("e") && renderer.material.color == highlightColor)
         {
             renderer.material.mainTexture = newTexture;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 }
