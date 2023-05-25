@@ -60,8 +60,10 @@ public class tura : MonoBehaviour
         len = hero.Length + enem.Length;
 
         characters = new GameObject[len];
-        hero.CopyTo(characters, 0);
-        enem.CopyTo(characters, hero.Length);
+        //hero.CopyTo(characters, 0);
+        characters = (GameObject[])hero.Clone();
+        characters = characters.Concat((GameObject[])enem.Clone()).ToArray();
+        //enem.CopyTo(characters, hero.Length);
         System.Random random = new System.Random();
         characters = characters.OrderBy(x => random.Next()).ToArray();
         characters[0].GetComponent<tura>().turn = 1;
@@ -91,7 +93,9 @@ public class tura : MonoBehaviour
             //SceneManager.LoadScene("End");
             return;
         }
-        if (enem.Length == 1 && enem[0] == null)
+
+     
+       if (enem.Length == 1 && enem[0] == null)
         {
             Debug.Log("Wygrales");
             for(int i=0; i < hero.Length; i++)
@@ -150,6 +154,7 @@ public class tura : MonoBehaviour
                 if (enem[i].transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<HealthBar>().isDead == true)
                 {
                     Destroy(enem[i]);
+                    //enem[i].gameObject.SetActive(false);
                 }
                 else
                 {
@@ -171,13 +176,16 @@ public class tura : MonoBehaviour
         }
 
         len = hero.Length + enem.Length;
+        foreach (var el in characters)
+        {
+            Debug.Log("SIEMAAA22" + el);
+        }
 
-       
-            if (characters[0].GetComponent<DragDrop>().can == false)
+        if (characters[iterator].gameObject != null || characters[iterator].GetComponent<DragDrop>().can == false)
             {
                 for (int i = 0; i < characters.Length; i++)
                 {
-                    if (characters[i].GetComponent<tura>().turn == 1)
+                    if (characters[i].gameObject!=null && characters[i].GetComponent<tura>().turn == 1)
                     {
                         string nm = characters[i].transform.parent.name;
                         GameObject pole = GameObject.Find("/Fields/" + nm);
@@ -187,7 +195,7 @@ public class tura : MonoBehaviour
                         color.a = 0.75f;
                         pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
                     }
-                    else
+                    if(characters[i].gameObject != null && characters[i].GetComponent<tura>().turn == 0)
                     {
                         string nm = characters[i].transform.parent.name;
                         GameObject pole = GameObject.Find("/Fields/" + nm);
@@ -198,6 +206,10 @@ public class tura : MonoBehaviour
                         pole.transform.GetChild(ktore - 1).GetComponent<SpriteRenderer>().color = color;
 
                     }
+                    else
+                    {
+                    Debug.Log("error w oznaczeniu");
+                    }
                 }
             }
         
@@ -205,22 +217,24 @@ public class tura : MonoBehaviour
   
     public void nextTurn()
     {
-        Debug.Log("Przed: "+characters[iterator].name);
+        Debug.Log("przed" + characters[iterator]);
         iterator++;
        
         if (iterator >= characters.Length)
         {
             iterator = 0;
         }
-        Debug.Log("ITTTEE" + iterator);
-        if (characters[iterator].gameObject != null)
+        Debug.Log("przed" + characters[iterator]);
+        if (characters[iterator].gameObject !=null)
         {
             for (int i = 0; i < characters.Length; i++)
             {
-                characters[i].GetComponent<tura>().turn = 0;
+                if (characters[i].gameObject != null)
+                {
+                    characters[i].GetComponent<tura>().turn = 0;
+                }
             }
             characters[iterator].GetComponent<tura>().turn = 1;
-            Debug.Log("Po: " + characters[iterator].name);
             int a = 0;
             foreach (var el in enem)
             {
@@ -237,6 +251,7 @@ public class tura : MonoBehaviour
         }
         else
         {
+            Debug.Log("nastepna");
             nextTurn();
         }
         

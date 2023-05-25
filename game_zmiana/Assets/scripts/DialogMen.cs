@@ -102,7 +102,6 @@ public class DialogMen : MonoBehaviour
     }
     void EndDial()
     {
-        Debug.Log("Ebd");
         hand = GameObject.Find("DialUI");
         hand.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         brek = GameObject.Find("Heroes");
