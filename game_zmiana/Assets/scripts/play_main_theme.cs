@@ -7,7 +7,7 @@ public class play_main_theme : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("baza");
     }
 
     public void baz()
