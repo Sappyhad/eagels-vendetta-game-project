@@ -57,13 +57,16 @@ public class tura : MonoBehaviour
         if (hero.Length == 1 && hero[0] == null)
         {
             Debug.Log("Przegrales");
-            //SceneManager.LoadScene("End");
+            //gameOverHandler.ShowGameOver(false);
+            SceneManager.LoadScene("End");
             return;
         }
         if (enem.Length == 1 && enem[0] == null)
         {
             Debug.Log("Wygrales");
-            for(int i=0; i < hero.Length; i++)
+          //  gameOverHandler.ShowGameOver(true);
+            SceneManager.LoadScene("End");
+            for (int i=0; i < hero.Length; i++)
             {
                 hand = team.instance.gameObject;
                 int children = hand.transform.childCount;
