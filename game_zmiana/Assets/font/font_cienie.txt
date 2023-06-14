@@ -1,0 +1,13 @@
+Prawy dolą
+x 40
+y 48
+
+prawy gora
+x 18
+y 18 gora
+y 12
+
+lewy dol
+x 18 lewo
+x 12 prawo
+y 18

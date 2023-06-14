@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour
         //    if (groundedCheck.IsGrounded())
         //   {
         transform.Translate(new Vector3(horizontalInput, 0f, verticalInput) * speed * Time.deltaTime);
-        audioSource.Play();
+       // audioSource.Play();
         //   }
     }
 }
