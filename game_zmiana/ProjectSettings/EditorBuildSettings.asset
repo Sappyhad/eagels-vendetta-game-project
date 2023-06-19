@@ -9,18 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/end.unity
     guid: 8f6709900a94cd8438d61f36fcd92d10
   - enabled: 1
-    path: Assets/Scenes/baza.unity
-    guid: 9e5f25755fdd94d479ca402a2b388a33
-  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/map.unity
+    path: Assets/Scenes/mapp.unity
     guid: dfe5988c9e125854e86c635024325688
   - enabled: 1
-    path: Assets/Scenes/Napisy.unity
-    guid: ce653fa8ee1ba4b47bdfb1316e31ccc8
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/baza.unity
+    guid: 9e5f25755fdd94d479ca402a2b388a33
+  - enabled: 1
+    path: Assets/Scenes/Menu_Napisy.unity
+    guid: 69909041bb32beb42aed94211b56c5fe
+  - enabled: 1
+    path: Assets/Scenes/Menu_.unity
+    guid: f285af4b6bbe95445a37a7de01136261
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: b016a75a725dcdf4493da7ca8869effc
   m_configObjects: {}

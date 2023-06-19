@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class HPMap : MonoBehaviour
 {
-    private const float MAX_HEALTH = 100f;
-    public float currentHealth;
+    private const double MAX_HEALTH = 100d;
+    public double currentHealth;
     public string charname;
-   // public Image gameOverImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +16,6 @@ public class HPMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if (currentHealth < 0)
-        Resources.Load<Sprite>("Assets/ZGON.png");
-        Application.Quit();
-
+        
     }
 }

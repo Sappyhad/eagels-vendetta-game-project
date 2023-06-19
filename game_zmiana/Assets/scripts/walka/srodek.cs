@@ -10,11 +10,11 @@ public class srodek : MonoBehaviour
     private GameObject hand2;
     private GameObject panel;
 
-    public void zatak(GameObject a, GameObject b, int who)
+    public void zatak(GameObject a, GameObject b, int who, int skill=0)
     {
-        StartCoroutine(zaatakowano(a, b,who));
+        StartCoroutine(zaatakowano(a, b,who,skill));
     }
-    IEnumerator zaatakowano(GameObject a, GameObject b, int who)
+    IEnumerator zaatakowano(GameObject a, GameObject b, int who, int skill)
     {
         Vector3 boh = new Vector3(a.transform.position.x, a.transform.position.y, a.transform.position.z);
         Vector3 enemy = new Vector3(b.transform.position.x, b.transform.position.y, b.transform.position.z);
@@ -31,7 +31,15 @@ public class srodek : MonoBehaviour
         b.transform.position = hand2.transform.position;
         if(who== 0) { 
             b.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
-            b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text =(a.gameObject.GetComponent<DMG>().dmg).ToString();
+            if(skill == 0)
+                b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text =(a.gameObject.GetComponent<DMG>().dmg).ToString();
+            //if (skill == 1)
+            //    b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text = (a.gameObject.GetComponent<DMG>().dmg 
+            //        * a.gameObject.GetComponent<skille>().s1multiplier).ToString();
+
+            //if (skill==2)
+            //    b.transform.GetChild(0).GetChild(1).gameObject.transform.GetComponent<TextMeshProUGUI>().text = (a.gameObject.GetComponent<DMG>().dmg 
+            //        * a.gameObject.GetComponent<skille>().s2multiplier).ToString();
         } else
         {
             a.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
@@ -46,7 +54,10 @@ public class srodek : MonoBehaviour
         b.transform.position = enemy;
         a.gameObject.GetComponent<Animator>().enabled = true;
         b.gameObject.GetComponent<Animator>().enabled = true;
-        if (who == 0) { b.transform.GetChild(0).GetChild(1).gameObject.SetActive(false); }
+        if (who == 0) 
+        { 
+            b.transform.GetChild(0).GetChild(1).gameObject.SetActive(false); 
+        }
         else
         {
             a.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);

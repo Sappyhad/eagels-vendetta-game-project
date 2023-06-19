@@ -11,7 +11,6 @@ public class DialTrigger : MonoBehaviour
     public bool rozm=false;
     private GameObject hand;
     private GameObject brek;
-    public AudioSource audioSource;
 
     public dialogdziadka dialogue;
 
@@ -34,7 +33,6 @@ public class DialTrigger : MonoBehaviour
     {
         if (Input.GetKeyUp("e")&& aa==true &&rozm==false)
         {
-            audioSource.Play();
             Debug.Log("siema");
             rozm = true;
             DialogSt();

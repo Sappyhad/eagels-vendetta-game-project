@@ -12,7 +12,7 @@ public class play_main_theme : MonoBehaviour
 
     public void baz()
     {
-        SceneManager.LoadScene("map");
+        SceneManager.LoadScene("mapp");
     }
     public void Quit()
     {

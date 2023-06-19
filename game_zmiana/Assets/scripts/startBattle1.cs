@@ -16,6 +16,7 @@ public class startBattle1 : MonoBehaviour
         gameObject.SetActive(false);
         PlayerPrefs.SetInt("where", 3);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName("SimpleScene"));
-        SceneManager.LoadScene(3, LoadSceneMode.Additive);
+        // SceneManager.LoadScene(3, LoadSceneMode.Additive);
+        SceneManager.LoadScene("SampleScene");
     }
 }

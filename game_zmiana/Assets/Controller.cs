@@ -6,7 +6,7 @@ public class Controller : MonoBehaviour
 {
     public float speed = 5f;
     //  public isgrounded groundedCheck;
-
+    public AudioSource audioSource;
     private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -14,6 +14,7 @@ public class Controller : MonoBehaviour
 
         //    if (groundedCheck.IsGrounded())
         //   {
+       // audioSource.Play();
         transform.Translate(new Vector3(horizontalInput, 0f, verticalInput) * speed * Time.deltaTime);
         //   }
     }

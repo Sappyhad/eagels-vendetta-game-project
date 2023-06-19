@@ -17,7 +17,7 @@ public class restart : MonoBehaviour
 
     private void RestartGame()
     {
-        //SceneManager.LoadScene("map");
+        SceneManager.LoadScene("map");
     }
 }
 

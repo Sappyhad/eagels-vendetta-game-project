@@ -20,7 +20,6 @@ public class ikonyPostaciPanelu : MonoBehaviour
             {
                 panel.transform.GetChild(0).gameObject.SetActive(true);
                 panel.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = icon;
-
             }
             else
             {

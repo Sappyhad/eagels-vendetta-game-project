@@ -9,7 +9,6 @@ public class zmiana_tekst : MonoBehaviour
     private Color originalColor;
     private Renderer renderer;
     public AudioSource audioSource;
-
     private void Start()
     {
         renderer = GetComponent<Renderer>();
@@ -36,8 +35,9 @@ public class zmiana_tekst : MonoBehaviour
     {
         if (Input.GetKeyUp("e") && renderer.material.color == highlightColor)
         {
-            audioSource.Play();
+           // audioSource.Play();
             renderer.material.mainTexture = newTexture;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 }
