@@ -7,4 +7,9 @@ public class start : MonoBehaviour
     {
         SceneManager.LoadScene("baza");
     }
+
+    public void menu()
+    {
+        SceneManager.LoadScene("end");
+    }
 }

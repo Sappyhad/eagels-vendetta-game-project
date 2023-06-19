@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class HealthBar : MonoBehaviour
 {
     private const float MAX_HEALTH = 100f;
@@ -42,11 +44,11 @@ public class HealthBar : MonoBehaviour
         if (currentHealth <= 0)
         {
             //if (isDead)
-            //{
-                
+            //{ NAPIS ZGON
+            SceneManager.LoadScene("napisy");
             //    return;
             //}
-            
+
             Dead();
         }
        
